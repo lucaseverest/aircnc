@@ -2,6 +2,9 @@ const express = require("express");
 //rotas
 const mongoose = require("mongoose");
 //mongodb
+
+const cors = require("cors");
+
 const routes = require("./routes");
 //arquivo das rotas
 
@@ -15,6 +18,7 @@ mongoose.connect(
   }
 );
 
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
